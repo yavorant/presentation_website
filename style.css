@@ -3,7 +3,7 @@
   --page-2-color: tan;
   --page-3-color: teal;
   --page-4-color: slateblue;
-  --animate-speed: 1s;
+  --animate-speed: 1.5s;
 }
 
 body {
@@ -50,6 +50,7 @@ body {
 
 .page p {
   font-size: 1.3rem;
+  position: relative;
 }
 
 .btn {
@@ -73,4 +74,30 @@ body {
 .btn-dark:hover {
   background-color: #fff;
   color: #333;
+}
+
+/* Animation */
+
+#page-1 h1 {
+  transform: translateY(-1000px);
+  animation: moveHeading var(--animate-speed) forwards ease-out;
+}
+
+#page-1 p {
+  transform: translateX(-1500px);
+  animation: moveParagraph var(--animate-speed) forwards ease-in 1s;
+}
+
+/* KeyFrames */
+
+@keyframes moveHeading {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveParagraph {
+  to {
+    transform: translateX(0);
+  }
 }
